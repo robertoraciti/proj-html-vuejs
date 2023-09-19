@@ -72,6 +72,32 @@ export default {
       </div>
     </div>
   </section>
+  <section class="collection">
+    <div class="winter">
+      <!-- <img src="../../public/img/winter_collection_bg.jpg" alt="" /> -->
+      <div class="content">
+        <h2>Winter Collection</h2>
+        <p>STYLISH AND WARM</p>
+        <button>VIEW MORE</button>
+      </div>
+    </div>
+    <div class="spring">
+      <div class="content">
+        <h2>Spring Collection</h2>
+        <p>BRIGHT AND COLORFUL</p>
+        <button>VIEW MORE</button>
+      </div>
+      <!-- <img src="../../public/img/spring_collection_bg.jpg" alt="" /> -->
+    </div>
+    <div class="autumn">
+      <div class="content">
+        <h2>Autumn Collection</h2>
+        <p>RICH AND COMFORTABLE</p>
+        <button>VIEW MORE</button>
+      </div>
+      <!-- <img src="../../public/img/autumn_collection_bg.jpg" alt="" /> -->
+    </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
@@ -112,6 +138,45 @@ export default {
   }
   .active {
     background-color: transparent;
+  }
+}
+
+.collection {
+  display: flex;
+  margin-bottom: 100px;
+  div {
+    width: calc(100% / 3);
+    height: 500px;
+  }
+  .winter {
+    background-image: url(../../public/img/winter_collection_bg.jpg);
+    background-size: cover;
+  }
+  .spring {
+    background-image: url(../../public/img/spring_collection_bg.jpg);
+    background-size: cover;
+  }
+  .autumn {
+    background-image: url(../../public/img/autumn_collection_bg.jpg);
+    background-size: cover;
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    color: white;
+
+    button {
+      border: 1px solid white;
+      background-color: rgb(255, 255, 255, 0.3);
+      color: white;
+      border-radius: 20px;
+      padding: 10px 20px;
+      margin-bottom: 30px;
+    }
   }
 }
 
