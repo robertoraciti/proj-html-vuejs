@@ -11,31 +11,130 @@ export default {
           description: "Men,Jackets,Jeans",
           oldPrice: "$235",
           currentPrice: "$230",
-          type: "men",
+          type: "Men",
+          active: true,
         },
         {
           path: "public/img/black_leather_suit-200x260.jpg",
           title: "Black Leather Suit",
           description: "Jackets,Men",
           currentPrice: "$176",
-          type: "men",
+          type: "Men",
+          active: true,
         },
         {
           path: "public/img/blue_jacket_and_white_stripe_tee-200x260.jpg",
           title: "Blue Jacket & Stripe Tee",
           description: "Jackets,Men,Suits",
           currentPrice: "$580",
-          type: "men",
+          type: "Men",
+          active: true,
         },
         {
           path: "public/img/modern_black_leather_suit-200x260.jpg",
           title: "Modern Black Leather Suit",
           description: "Jackets,Men",
           currentPrice: "$96",
-          type: "men",
+          type: "Men",
+          active: true,
+        },
+        {
+          path: "public/img/spring_printed_dress-200x260.jpg",
+          title: "Spring Printed Dress",
+          description: "Dress,Jeans",
+          currentPrice: "$47",
+          type: "Women",
+          active: false,
+        },
+        {
+          path: "public/img/modern_love_tee-200x260.jpg",
+          title: "Modern Love Tee",
+          description: "T-shirts, Women",
+          currentPrice: "$68",
+          type: "Women",
+          active: false,
+        },
+        {
+          path: "public/img/black_leather_jacket-200x260.jpg",
+          title: "Black Jacket",
+          description: "Jackets,Women",
+          currentPrice: "$125",
+          type: "Women",
+          active: false,
+        },
+        {
+          path: "public/img/hipster_black_top-200x260.jpg",
+          title: "Hipster Black Top",
+          description: "T-Shirts,Women",
+          currentPrice: "$57",
+          type: "Women",
+          active: false,
+        },
+        {
+          path: "public/img/casual_leather_belts-200x260.jpg",
+          title: "Casual Leather Belts",
+          description: "Accessories, Men",
+          currentPrice: "$65",
+          type: "Accessories",
+          active: false,
+        },
+        {
+          path: "public/img/leather_gloves-200x260.jpg",
+          title: "Leather Gloves",
+          description: "Accessories,Gloves,Men,Women",
+          currentPrice: "$45",
+          type: "Accessories",
+          active: false,
+        },
+        {
+          path: "public/img/modern_leather_boots-200x260.jpg",
+          title: "Modern Leather Boots",
+          description: "Accessories,Men,Miscellaneous,Shoes",
+          oldPrice: "$50",
+          currentPrice: "$30",
+          type: "Accessories",
+          active: false,
+        },
+        {
+          path: "public/img/brown_dress_shoes-200x260.jpg",
+          title: "Brown Dress Boots",
+          description: "Accessories,Miscellaneous,Shoes, Women",
+          oldPrice: "$46",
+          currentPrice: "$36",
+          type: "Accessories",
+          active: false,
         },
       ],
+      categories: ["Men", "Women", "Accesories"],
+      activeCategories: 0,
     };
+  },
+
+  methods: {
+    changeCategories(index) {
+      this.activeCategories = index;
+      console.log(this.activeCategories);
+    },
+
+    showResult() {
+      for (let i = 0; i < this.cards.length; i++) {
+        this.cards[i].active = false;
+        if (this.activeCategories == 0 && this.cards[i].type.includes("Men")) {
+          console.log(this.cards[i].type);
+          this.cards[i].active = true;
+        } else if (
+          this.activeCategories == 1 &&
+          this.cards[i].type.includes("Women")
+        ) {
+          this.cards[i].active = true;
+        } else if (
+          this.activeCategories == 2 &&
+          this.cards[i].type.includes("Accessories")
+        ) {
+          this.cards[i].active = true;
+        }
+      }
+    },
   },
 
   components: {
@@ -54,12 +153,20 @@ export default {
     </div>
     <p class="text-center">Must have products from our top sellers</p>
     <div class="btn-cards">
-      <button class="active">Men</button>
-      <button>Women</button>
-      <button>Accessories</button>
+      <button
+        v-for="(category, index) in categories"
+        @click="changeCategories(index), showResult()"
+        :class="index == activeCategories ? 'active' : ''"
+      >
+        {{ category }}
+      </button>
     </div>
     <div class="cards container mt-5">
-      <div v-for="card in cards" class="card col-3 border border-0">
+      <div
+        v-for="(card, index) in cards"
+        v-show="card.active == true"
+        class="card col-3 border border-0"
+      >
         <img :src="card.path" alt="" srcset="" />
         <p>{{ card.title }}</p>
         <small>{{ card.description }}</small>
@@ -95,6 +202,7 @@ export default {
       </div>
     </div>
   </section>
+  <section class="best-seller"></section>
 </template>
 
 <style lang="scss" scoped>
