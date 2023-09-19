@@ -172,6 +172,10 @@ hr {
       color: white;
       padding: 10px 15px;
       margin: 0 35px;
+
+      &:hover {
+        background-color: #6397e0;
+      }
     }
   }
 }

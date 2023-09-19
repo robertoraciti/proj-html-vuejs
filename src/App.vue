@@ -25,4 +25,9 @@ export default {
   <AppFooter />
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+}
+</style>

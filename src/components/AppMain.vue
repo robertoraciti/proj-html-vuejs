@@ -1,5 +1,5 @@
 <script>
-// import MyComponent from "./components/MyComponent.vue";
+import jumbotron from "./_jumbotron.vue";
 
 export default {
   data() {
@@ -8,14 +8,14 @@ export default {
     };
   },
 
-  // components: {
-  //   MyComponent,
-  // },
+  components: {
+    jumbotron,
+  },
 };
 </script>
 
 <template>
-  <h1>{{ title }}</h1>
+  <jumbotron />
 </template>
 
 <style lang="scss" scoped></style>
