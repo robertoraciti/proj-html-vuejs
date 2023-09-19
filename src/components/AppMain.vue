@@ -1,5 +1,6 @@
 <script>
 import jumbotron from "./_jumbotron.vue";
+import featuredSect from "./_featuredsect.vue";
 
 export default {
   data() {
@@ -13,6 +14,7 @@ export default {
           currentPrice: "$230",
           type: "Men",
           active: true,
+          bestseller: true,
         },
         {
           path: "public/img/black_leather_suit-200x260.jpg",
@@ -21,6 +23,7 @@ export default {
           currentPrice: "$176",
           type: "Men",
           active: true,
+          bestseller: true,
         },
         {
           path: "public/img/blue_jacket_and_white_stripe_tee-200x260.jpg",
@@ -45,6 +48,7 @@ export default {
           currentPrice: "$47",
           type: "Women",
           active: false,
+          bestseller: true,
         },
         {
           path: "public/img/modern_love_tee-200x260.jpg",
@@ -53,6 +57,7 @@ export default {
           currentPrice: "$68",
           type: "Women",
           active: false,
+          bestseller: true,
         },
         {
           path: "public/img/black_leather_jacket-200x260.jpg",
@@ -61,6 +66,7 @@ export default {
           currentPrice: "$125",
           type: "Women",
           active: false,
+          bestseller: true,
         },
         {
           path: "public/img/hipster_black_top-200x260.jpg",
@@ -69,6 +75,7 @@ export default {
           currentPrice: "$57",
           type: "Women",
           active: false,
+          bestseller: true,
         },
         {
           path: "public/img/casual_leather_belts-200x260.jpg",
@@ -105,80 +112,20 @@ export default {
           active: false,
         },
       ],
-      categories: ["Men", "Women", "Accesories"],
-      activeCategories: 0,
+
+      hiddenImg: 0,
     };
   },
-
-  methods: {
-    changeCategories(index) {
-      this.activeCategories = index;
-      console.log(this.activeCategories);
-    },
-
-    showResult() {
-      for (let i = 0; i < this.cards.length; i++) {
-        this.cards[i].active = false;
-        if (this.activeCategories == 0 && this.cards[i].type.includes("Men")) {
-          console.log(this.cards[i].type);
-          this.cards[i].active = true;
-        } else if (
-          this.activeCategories == 1 &&
-          this.cards[i].type.includes("Women")
-        ) {
-          this.cards[i].active = true;
-        } else if (
-          this.activeCategories == 2 &&
-          this.cards[i].type.includes("Accessories")
-        ) {
-          this.cards[i].active = true;
-        }
-      }
-    },
-  },
-
   components: {
     jumbotron,
+    featuredSect,
   },
 };
 </script>
 
 <template>
   <jumbotron />
-  <section class="featured-prod container mt-5">
-    <div class="title">
-      <hr />
-      <h2>Featured Products</h2>
-      <hr />
-    </div>
-    <p class="text-center">Must have products from our top sellers</p>
-    <div class="btn-cards">
-      <button
-        v-for="(category, index) in categories"
-        @click="changeCategories(index), showResult()"
-        :class="index == activeCategories ? 'active' : ''"
-      >
-        {{ category }}
-      </button>
-    </div>
-    <div class="cards container mt-5">
-      <div
-        v-for="(card, index) in cards"
-        v-show="card.active == true"
-        class="card col-3 border border-0"
-      >
-        <img :src="card.path" alt="" srcset="" />
-        <p>{{ card.title }}</p>
-        <small>{{ card.description }}</small>
-        <p>
-          <span class="text-decoration-line-through me-2">{{
-            card.oldPrice
-          }}</span>
-          <span>{{ card.currentPrice }}</span>
-        </p>
-      </div>
-    </div>
-  </section>
+  <featuredSect />
   <section class="collection">
     <div class="winter">
       <div class="content">
@@ -202,50 +149,56 @@ export default {
       </div>
     </div>
   </section>
-  <section class="best-seller"></section>
+  <section class="best-seller">
+    <div class="title">
+      <hr />
+      <h2>Best Seller</h2>
+      <hr />
+    </div>
+    <p class="text-center text-secondary mt-2">
+      Must have products from our top sellers
+    </p>
+    <div class="carousel container">
+      <div v-for="(card, index) in cards" v-show="card.bestseller" class="card">
+        <img :src="card.path" alt="" srcset="" />
+      </div>
+    </div>
+  </section>
+  <section class="promo">
+    <div class="container cards-container">
+      <div class="left-card">
+        <div class="content w-75 m-auto">
+          <h2>70% Off</h2>
+          <p class="w-75">
+            Vivamus tempor leo lacus, feugiat ut magna aliquam erat.
+          </p>
+          <button>VIEW MORE</button>
+        </div>
+      </div>
+      <div class="right-card">
+        <div class="content w-75 m-auto">
+          <h2>Free Shipping</h2>
+          <p class="w-75">
+            Vivamus tempor leo lacus, feugiat ut magna aliquam erat.
+          </p>
+          <button>VIEW MORE</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="new-arrivals">
+    <div class="title">
+      <hr />
+      <h2>New Arrivals</h2>
+      <hr />
+    </div>
+    <p class="text-center text-secondary mt-2">
+      Brand new products from top designers
+    </p>
+  </section>
 </template>
 
 <style lang="scss" scoped>
-.featured-prod {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 150px;
-
-  p {
-    color: gray;
-  }
-  .title {
-    display: flex;
-    justify-content: center;
-    hr {
-      width: 25%;
-    }
-    h2 {
-      font-size: 2rem;
-      margin: 0 40px;
-    }
-  }
-}
-
-.btn-cards {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-
-  button {
-    background-color: #f6f6f6;
-    border: 1px solid lightgray;
-    padding: 10px 50px;
-
-    &:hover {
-      background-color: transparent;
-    }
-  }
-  .active {
-    background-color: transparent;
-  }
-}
-
 .collection {
   display: flex;
   margin-bottom: 100px;
@@ -289,21 +242,102 @@ export default {
   }
 }
 
-.cards {
+.best-seller {
   display: flex;
-  gap: 5px;
+  flex-direction: column;
+  margin-bottom: 150px;
 
-  p {
-    color: black;
-    font-weight: bold;
-    margin: 0;
-  }
-  small {
-    margin: 5px 0;
+  .title {
+    display: flex;
+    justify-content: center;
+    hr {
+      width: 25%;
+    }
+    h2 {
+      font-size: 2rem;
+      margin: 0 40px;
+    }
   }
 
-  span {
-    color: #427ed1;
+  .carousel {
+    display: flex;
+    .card {
+      width: calc(100% / 5);
+      border: none;
+    }
+  }
+}
+
+.promo {
+  height: 500px;
+  background-image: url(../../public/img/bkgd_confetti-compressor.jpg);
+  background-size: cover;
+  background-position: center;
+
+  .cards-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .left-card {
+    height: 400px;
+    width: 600px;
+    background-image: url(../../public/img/promo_box_1_bg.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .right-card {
+    height: 400px;
+    width: 600px;
+    background-image: url(../../public/img/promo_box_2_bg.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    button {
+      border: 1px solid white;
+      background-color: rgb(255, 255, 255, 0.3);
+      color: white;
+      border-radius: 20px;
+      padding: 10px 20px;
+      margin-bottom: 30px;
+
+      &:hover {
+        background-color: rgb(255, 255, 255, 0);
+      }
+    }
+  }
+}
+
+.new-arrivals {
+  display: flex;
+  flex-direction: column;
+  margin: 120px 0;
+
+  .title {
+    display: flex;
+    justify-content: center;
+    hr {
+      width: 25%;
+    }
+    h2 {
+      font-size: 2rem;
+      margin: 0 40px;
+    }
   }
 }
 </style>
