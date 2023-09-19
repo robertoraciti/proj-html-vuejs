@@ -27,6 +27,7 @@ export default {
         },
       ],
       activeSlide: 0,
+      autoplay: false,
     };
   },
 
@@ -46,11 +47,19 @@ export default {
         this.activeSlide = 0;
       }
     },
+
+    setAutoplay() {
+      if (!this.autoplay) {
+        this.autoplay = setInterval(() => {
+          this.goNext();
+        }, 3000);
+      }
+    },
   },
 
-  // components: {
-  //   MyComponent,
-  // },
+  created() {
+    this.setAutoplay();
+  },
 };
 </script>
 
