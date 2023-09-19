@@ -1,11 +1,14 @@
 <script>
+import { store } from "./data/store.js";
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
 import AppFooter from "./components/AppFooter.vue";
 
 export default {
   data() {
-    return {};
+    return {
+      store,
+    };
   },
 
   components: {
@@ -22,4 +25,4 @@ export default {
   <AppFooter />
 </template>
 
-<style lang="sass"></style>
+<style lang="scss"></style>
