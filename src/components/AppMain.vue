@@ -74,7 +74,6 @@ export default {
   </section>
   <section class="collection">
     <div class="winter">
-      <!-- <img src="../../public/img/winter_collection_bg.jpg" alt="" /> -->
       <div class="content">
         <h2>Winter Collection</h2>
         <p>STYLISH AND WARM</p>
@@ -87,7 +86,6 @@ export default {
         <p>BRIGHT AND COLORFUL</p>
         <button>VIEW MORE</button>
       </div>
-      <!-- <img src="../../public/img/spring_collection_bg.jpg" alt="" /> -->
     </div>
     <div class="autumn">
       <div class="content">
@@ -95,7 +93,6 @@ export default {
         <p>RICH AND COMFORTABLE</p>
         <button>VIEW MORE</button>
       </div>
-      <!-- <img src="../../public/img/autumn_collection_bg.jpg" alt="" /> -->
     </div>
   </section>
 </template>
@@ -176,6 +173,10 @@ export default {
       border-radius: 20px;
       padding: 10px 20px;
       margin-bottom: 30px;
+
+      &:hover {
+        background-color: rgb(255, 255, 255, 0);
+      }
     }
   }
 }
