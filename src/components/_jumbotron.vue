@@ -77,7 +77,7 @@ export default {
 
 <style lang="scss" scoped>
 .jumbotron {
-  height: 400px;
+  height: 500px;
 
   object-fit: cover;
   object-position: center;
@@ -91,7 +91,7 @@ export default {
     position: absolute;
     left: 0;
     top: 50%;
-    transform: translateY(15%);
+
     cursor: pointer;
   }
   .go-next {
@@ -99,7 +99,7 @@ export default {
     position: absolute;
     right: 0;
     top: 50%;
-    transform: translateY(15%);
+
     cursor: pointer;
   }
 
@@ -112,6 +112,7 @@ export default {
 
   img {
     width: 100%;
+    height: 100%;
     position: relative;
   }
 
@@ -119,7 +120,8 @@ export default {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-50%);
+
     color: white;
     text-align: center;
 
