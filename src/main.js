@@ -17,12 +17,22 @@ import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { faCcVisa } from "@fortawesome/free-brands-svg-icons";
+import { faCcPaypal } from "@fortawesome/free-brands-svg-icons";
+import { faCcMastercard } from "@fortawesome/free-brands-svg-icons";
+import { faCcDiscover } from "@fortawesome/free-brands-svg-icons";
+import { faCcAmazonPay } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 /* add icons to the library */
 library.add(
+  faCcAmazonPay,
+  faCcDiscover,
+  faCcMastercard,
+  faCcPaypal,
+  faCcVisa,
   faEnvelope,
   faStar,
   faCircle,
