@@ -6,7 +6,7 @@ export default {
     return {
       cards: [
         {
-          path: "public/img/black_elegant_leather_jacket-200x260.jpg",
+          path: "public/img/black_elegant_leather_jacket.jpg",
           title: "Black Leather Jacket",
           description: "Men,Jackets,Jeans",
           oldPrice: "$235",
@@ -16,7 +16,7 @@ export default {
           bestseller: true,
         },
         {
-          path: "public/img/black_leather_suit-200x260.jpg",
+          path: "public/img/black_leather_suit.jpg",
           title: "Black Leather Suit",
           description: "Jackets,Men",
           currentPrice: "$176",
@@ -25,7 +25,7 @@ export default {
           bestseller: true,
         },
         {
-          path: "public/img/blue_jacket_and_white_stripe_tee-200x260.jpg",
+          path: "public/img/blue_jacket_and_white_stripe_tee.jpg",
           title: "Blue Jacket & Stripe Tee",
           description: "Jackets,Men,Suits",
           currentPrice: "$580",
@@ -33,7 +33,7 @@ export default {
           active: true,
         },
         {
-          path: "public/img/modern_black_leather_suit-200x260.jpg",
+          path: "public/img/modern_black_leather_suit.jpg",
           title: "Modern Black Leather Suit",
           description: "Jackets,Men",
           currentPrice: "$96",
@@ -41,7 +41,7 @@ export default {
           active: true,
         },
         {
-          path: "public/img/spring_printed_dress-200x260.jpg",
+          path: "public/img/spring_printed_dress.jpg",
           title: "Spring Printed Dress",
           description: "Dress,Jeans",
           currentPrice: "$47",
@@ -50,7 +50,7 @@ export default {
           bestseller: true,
         },
         {
-          path: "public/img/modern_love_tee-200x260.jpg",
+          path: "public/img/modern_love_tee.jpg",
           title: "Modern Love Tee",
           description: "T-shirts, Women",
           currentPrice: "$68",
@@ -59,7 +59,7 @@ export default {
           bestseller: true,
         },
         {
-          path: "public/img/black_leather_jacket-200x260.jpg",
+          path: "public/img/black_leather_jacket.jpg",
           title: "Black Jacket",
           description: "Jackets,Women",
           currentPrice: "$125",
@@ -68,7 +68,7 @@ export default {
           bestseller: true,
         },
         {
-          path: "public/img/hipster_black_top-200x260.jpg",
+          path: "public/img/hipster_black_top.jpg",
           title: "Hipster Black Top",
           description: "T-Shirts,Women",
           currentPrice: "$57",
@@ -77,7 +77,7 @@ export default {
           bestseller: true,
         },
         {
-          path: "public/img/casual_leather_belts-200x260.jpg",
+          path: "public/img/casual_leather_belts.jpg",
           title: "Casual Leather Belts",
           description: "Accessories, Men",
           currentPrice: "$65",
@@ -85,7 +85,7 @@ export default {
           active: false,
         },
         {
-          path: "public/img/leather_gloves-200x260.jpg",
+          path: "public/img/leather_gloves.jpg",
           title: "Leather Gloves",
           description: "Accessories,Gloves,Men,Women",
           currentPrice: "$45",
@@ -93,7 +93,7 @@ export default {
           active: false,
         },
         {
-          path: "public/img/modern_leather_boots-200x260.jpg",
+          path: "public/img/modern_leather_boots.jpg",
           title: "Modern Leather Boots",
           description: "Accessories,Men,Miscellaneous,Shoes",
           oldPrice: "$50",
@@ -102,7 +102,7 @@ export default {
           active: false,
         },
         {
-          path: "public/img/brown_dress_shoes-200x260.jpg",
+          path: "public/img/brown_dress_shoes.jpg",
           title: "Brown Dress Boots",
           description: "Accessories,Miscellaneous,Shoes, Women",
           oldPrice: "$46",
