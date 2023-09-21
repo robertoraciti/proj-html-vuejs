@@ -256,11 +256,28 @@ export default {
           class="card-el"
         >
           <img :src="card.path" alt="" srcset="" />
-          <div
-            v-for="(card, index) in cards"
-            v-show="card.bestseller"
-            class="card-hover"
-          ></div>
+          <div v-show="card.bestseller" class="card-hover">
+            <div class="info-product">
+              <div class="product">
+                <p class="name-product">{{ card.title }}</p>
+                <small class="type">{{ card.description }}</small>
+                <p class="price">{{ card.currentPrice }}</p>
+              </div>
+              <div class="options">
+                <div class="cart">
+                  <font-awesome-icon
+                    class="icon"
+                    icon="fa-solid fa-cart-shopping"
+                  />
+                  Add to cart
+                </div>
+                <div class="details">
+                  <font-awesome-icon class="icon" icon="fa-solid fa-list-ul" />
+                  Details
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="go-prev">
           <font-awesome-icon class="icon" icon="fa-solid fa-angle-left" />
@@ -700,13 +717,13 @@ export default {
   }
 
   .carousel {
-    width: 1200px;
+    width: 1180px;
     position: relative;
     overflow: hidden;
 
     .cards-container {
       display: flex;
-      width: 1450px;
+      width: 1400px;
       .card-el {
         width: 235px;
         height: 305px;
@@ -733,7 +750,39 @@ export default {
             rgba(86, 137, 212, 1) 0%,
             rgba(239, 166, 210, 1) 100%
           );
-          opacity: 0.3;
+          opacity: 0.9;
+
+          .info-product {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-evenly;
+            color: white;
+          }
+          .product {
+            display: flex;
+
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .name-product {
+              font-weight: bold;
+              cursor: pointer;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+
+          .options {
+            display: flex;
+            justify-content: space-around;
+            font-size: 0.8rem;
+            * {
+              cursor: pointer;
+            }
+          }
         }
       }
 

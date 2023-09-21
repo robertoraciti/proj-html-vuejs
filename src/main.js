@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 /* import specific icons */
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faListUl } from "@fortawesome/free-solid-svg-icons";
 import { faBox } from "@fortawesome/free-solid-svg-icons";
 import { faCircle } from "@fortawesome/free-regular-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
@@ -30,6 +31,7 @@ import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 /* add icons to the library */
 library.add(
+  faListUl,
   faSquareCheck,
   faBox,
   faCcAmazonPay,
