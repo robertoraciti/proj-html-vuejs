@@ -1,6 +1,4 @@
 <script>
-import { faUtensilSpoon } from "@fortawesome/free-solid-svg-icons";
-
 // import MyComponent from "./components/MyComponent.vue";
 
 export default {

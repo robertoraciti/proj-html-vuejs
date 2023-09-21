@@ -187,6 +187,10 @@ export default {
       }
     },
 
+    changeTestimonial(index) {
+      this.activeTestimonial = index;
+    },
+
     setAutoplay() {
       if (!this.autoplay) {
         this.autoplay = setInterval(() => {
@@ -236,10 +240,10 @@ export default {
   </section>
   <!-- SEZIONE PIU VENDUTI -->
   <section class="best-seller">
-    <div class="title">
-      <hr />
+    <div class="title container">
+      <div></div>
       <h2>Best Seller</h2>
-      <hr />
+      <div></div>
     </div>
     <p class="text-center text-secondary mt-2">
       Must have products from our top sellers
@@ -287,10 +291,10 @@ export default {
   </section>
   <!-- SEZIONE NUOVI ARRIVI -->
   <section class="new-arrivals">
-    <div class="title">
-      <hr />
+    <div class="title container">
+      <div></div>
       <h2>New Arrivals</h2>
-      <hr />
+      <div></div>
     </div>
     <p class="text-center text-secondary mt-2">
       Brand new products from top designers
@@ -332,6 +336,7 @@ export default {
           v-for="(testimonial, index) in testimonials"
           class="icon"
           :class="index == activeTestimonial ? 'active' : ''"
+          @click="changeTestimonial(index)"
           icon="fa-regular fa-circle"
         />
       </div>
@@ -339,10 +344,10 @@ export default {
   </section>
   <!-- SEZIONE BLOG -->
   <section class="blog">
-    <div class="title">
-      <hr />
+    <div class="title container">
+      <div></div>
       <h2>From Our Blog</h2>
-      <hr />
+      <div></div>
     </div>
     <p class="text-center text-secondary mt-2">The latest Classic Shop news</p>
     <div class="articles container">
@@ -667,11 +672,17 @@ export default {
   .title {
     display: flex;
     justify-content: center;
-    hr {
-      width: 25%;
+    align-items: center;
+
+    div {
+      height: 1px;
+      width: 20px;
+      background-color: lightgray;
+      flex-grow: 1;
     }
     h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
       margin: 0 40px;
     }
   }
@@ -789,11 +800,16 @@ export default {
   .title {
     display: flex;
     justify-content: center;
-    hr {
-      width: 25%;
+    align-items: center;
+    div {
+      height: 1px;
+      width: 20px;
+      background-color: lightgray;
+      flex-grow: 1;
     }
     h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
       margin: 0 40px;
     }
   }
@@ -879,6 +895,7 @@ export default {
 
     .icon {
       margin-right: 5px;
+      cursor: pointer;
     }
 
     .active {
@@ -896,11 +913,16 @@ export default {
   .title {
     display: flex;
     justify-content: center;
-    hr {
-      width: 25%;
+    align-items: center;
+    div {
+      height: 1px;
+      width: 20px;
+      background-color: lightgray;
+      flex-grow: 1;
     }
     h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
       margin: 0 40px;
     }
   }

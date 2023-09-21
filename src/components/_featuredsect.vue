@@ -156,9 +156,9 @@ export default {
 <template>
   <section class="featured-prod container mt-5">
     <div class="title">
-      <hr />
+      <div></div>
       <h2>Featured Products</h2>
-      <hr />
+      <div></div>
     </div>
     <p class="text-center">Must have products from our top sellers</p>
     <div class="btn-cards">
@@ -202,11 +202,16 @@ export default {
   .title {
     display: flex;
     justify-content: center;
-    hr {
-      width: 25%;
+    align-items: center;
+    div {
+      height: 1px;
+      width: 20px;
+      background-color: lightgray;
+      flex-grow: 1;
     }
     h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
       margin: 0 40px;
     }
   }
