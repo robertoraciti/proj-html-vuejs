@@ -257,6 +257,7 @@ export default {
       .post {
         padding-bottom: 10px;
         border-bottom: 1px solid darkgray;
+        transition: 0.5s;
 
         &:hover {
           cursor: pointer;
@@ -274,6 +275,7 @@ export default {
           background-color: transparent;
           color: white;
           border: 1px solid darkgray;
+          transition: 0.3s;
 
           &:hover {
             background-color: #427ed1;
@@ -294,6 +296,7 @@ export default {
       .icons {
         margin-right: 20px;
         font-size: 1.5rem;
+        transition: 0.4s;
         &:hover {
           color: gray;
           cursor: pointer;
@@ -309,6 +312,10 @@ export default {
 
       p {
         margin: 0;
+      }
+
+      .item {
+        transition: 0.3s;
       }
 
       .item:hover {

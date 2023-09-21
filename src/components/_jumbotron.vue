@@ -149,6 +149,7 @@ export default {
       color: white;
       border-radius: 10px;
       padding: 10px 20px;
+      transition: 0.5s;
 
       &:hover {
         background-color: rgb(255, 255, 255, 0);

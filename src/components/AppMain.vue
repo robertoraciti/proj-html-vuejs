@@ -649,6 +649,12 @@ export default {
     align-items: center;
     color: white;
 
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      padding-bottom: 10px;
+    }
+
     button {
       border: 1px solid white;
       background-color: rgb(255, 255, 255, 0.3);
@@ -656,6 +662,7 @@ export default {
       border-radius: 20px;
       padding: 10px 20px;
       margin-bottom: 30px;
+      transition: 0.5s;
 
       &:hover {
         background-color: rgb(255, 255, 255, 0);
@@ -688,13 +695,13 @@ export default {
   }
 
   .carousel {
-    width: 1000px;
+    width: 1200px;
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
 
     .cards-container {
       display: flex;
-      width: 1200px;
+      width: 1450px;
       .card-el {
         width: 235px;
         height: 305px;
@@ -784,6 +791,7 @@ export default {
       border-radius: 20px;
       padding: 10px 20px;
       margin-bottom: 30px;
+      transition: 0.5s;
 
       &:hover {
         background-color: rgb(255, 255, 255, 0);

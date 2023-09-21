@@ -49,7 +49,8 @@ export default {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <font-awesome-icon icon="fa-solid fa-cart-shopping" /> CART
+            <font-awesome-icon class="me-2" icon="fa-solid fa-cart-shopping" />
+            CART
           </button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Show Cart</a></li>
@@ -94,9 +95,15 @@ export default {
   font-size: 0.9rem;
 
   .icons {
-    margin-right: 10px;
-    font-size: 1.1rem;
+    margin-right: 13px;
+    font-size: 1.2rem;
     color: #494949;
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 0.5;
+      cursor: pointer;
+    }
   }
   .account-info {
     display: flex;
@@ -108,6 +115,7 @@ export default {
     color: #aaaaaa;
     height: 100%;
     padding: 0 15px;
+    transition: 0.5s;
     &:hover {
       background-color: #fafafa;
     }
@@ -154,6 +162,7 @@ hr {
       height: 100%;
       line-height: 134px;
       font-size: 0.9rem;
+      transition: 0.5s;
 
       &:first-child {
         border-top: 1px solid #427ed1;
@@ -172,6 +181,7 @@ hr {
       color: white;
       padding: 10px 15px;
       margin: 0 35px;
+      transition: 0.5s;
 
       &:hover {
         background-color: #6397e0;

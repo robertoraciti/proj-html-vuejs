@@ -226,6 +226,7 @@ export default {
     background-color: #f6f6f6;
     border: 1px solid lightgray;
     padding: 10px 50px;
+    transition: 0.5s;
 
     &:hover {
       background-color: transparent;
