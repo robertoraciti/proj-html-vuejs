@@ -61,12 +61,12 @@ body {
 
     .icon {
       font-size: 1.6rem;
-      margin: 10px 0 0 0;
+      margin: 10px 0 5px 0;
       cursor: pointer;
     }
 
     p {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       font-weight: bold;
     }
   }

@@ -256,6 +256,11 @@ export default {
           class="card-el"
         >
           <img :src="card.path" alt="" srcset="" />
+          <div
+            v-for="(card, index) in cards"
+            v-show="card.bestseller"
+            class="card-hover"
+          ></div>
         </div>
         <div class="go-prev">
           <font-awesome-icon class="icon" icon="fa-solid fa-angle-left" />
@@ -706,9 +711,29 @@ export default {
         width: 235px;
         height: 305px;
         border: none;
+        position: relative;
+
+        &:hover .card-hover {
+          display: block;
+        }
 
         img {
           width: 100%;
+        }
+
+        .card-hover {
+          display: none;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 235px;
+          height: 305px;
+          border: none;
+          background: linear-gradient(
+            rgba(86, 137, 212, 1) 0%,
+            rgba(239, 166, 210, 1) 100%
+          );
+          opacity: 0.3;
         }
       }
 

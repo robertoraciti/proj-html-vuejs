@@ -177,6 +177,9 @@ export default {
         class="card col-3 border border-0"
       >
         <img :src="card.path" alt="" srcset="" />
+        <div class="img-hover">
+          <font-awesome-icon class="icon" icon="fa-regular fa-square-check" />
+        </div>
         <p>{{ card.title }}</p>
         <small>{{ card.description }}</small>
         <p>
@@ -239,6 +242,43 @@ export default {
 .cards {
   display: flex;
   gap: 5px;
+
+  .card {
+    img {
+      position: relative;
+    }
+    &:hover .img-hover {
+      display: block;
+    }
+
+    .img-hover {
+      display: none;
+      position: absolute;
+      left: 0;
+      width: 319px;
+      height: 413px;
+      border: none;
+      background: linear-gradient(
+        rgba(86, 137, 212, 1) 0%,
+        rgba(239, 166, 210, 1) 100%
+      );
+      opacity: 0.9;
+
+      .icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        font-size: 30px;
+        width: 30px;
+        height: 30px;
+        color: white;
+        background-color: black;
+        border-radius: 50%;
+        padding: 25px;
+      }
+    }
+  }
 
   p {
     color: black;
